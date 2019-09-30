@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"            
+             IconImageSource="ic_car.png"
+             NavigationPage.HasNavigationBar="True"
+             xmlns:local="clr-namespace:NorthShoreSurfApp"
+             x:Class="NorthShoreSurfApp.MainPage">
+
+    <Grid>
+        
+        
+
+    <Grid
+            IsVisible="true"
+            VerticalOptions="Center" 
+            RowSpacing="0"
+            >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+        <!--<Button
+                x:Name="btnFacebookLogin"       
+                HeightRequest="60"
+                CornerRadius="10"
+            Margin="10"
+            BorderColor="Black"
+                BorderWidth="1"
+                Text="Login"
+                BackgroundColor="Yellow"
+                />-->
+            <Button
+                x:Name="btnFacebookLogout"       
+                Text="Logout"
+                Grid.Row="1"       
+                BackgroundColor="Orange"
+                />
+
+            <local:CustomImageTextButton 
+                x:Name="citBtnFacebookLogin"
+                Margin="20, 2, 20, 2"
+                Grid.Row="2"
+                HeightRequest="60"
+                />
+
+
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

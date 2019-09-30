@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:CustomTabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d"
+            x:Class="NorthShoreSurfApp.RootTabbedPage"
+            xmlns:local="clr-namespace:NorthShoreSurfApp"
+            BackgroundColor="#FFFFFF"
+            BarBackgroundColor="#F0F0F0"
+            >
+    <!--Pages can be added as references or inline-->
+    <local:CustomNavigationPage IconImageSource="ic_home.png" Title="Home">
+        <x:Arguments>
+            <local:MainPage Title="Home" NavigationPage.HasNavigationBar="True"/>
+        </x:Arguments>
+    </local:CustomNavigationPage>
+
+    <local:CustomNavigationPage IconImageSource="ic_surfing.png" Title="Surfing">
+        <x:Arguments>
+            <local:SurfingConditionsPage Title="Surfing" NavigationPage.HasNavigationBar="True"/>
+        </x:Arguments>
+    </local:CustomNavigationPage>
+
+    <local:CustomNavigationPage Title="Carpool" IconUnselectedResource="ic_car.png" IconSelectedResource="ic_car_selected" IconImageSource="ic_car.png">
+        <x:Arguments>
+            <local:CarpoolingPage  Title="Carpool" NavigationPage.HasNavigationBar="True"/>
+        </x:Arguments>
+    </local:CustomNavigationPage>
+
+</local:CustomTabbedPage>
