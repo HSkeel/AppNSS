@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Java.Lang;
 using Newtonsoft.Json;
-using NorthShoreSurfApp.Service;
+using NorthShoreSurfApp.Droid.Service;
 using Org.Json;
 using Xamarin.Facebook;
 using Xamarin.Facebook.Login;
@@ -20,9 +20,11 @@ namespace NorthShoreSurfApp.Droid.Service
 {
     public class AndroidFacebookService : Java.Lang.Object, IFacebookService, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback
     {
+        /*****************************************************************/
+        // PROPERTIES
+        /*****************************************************************/
         #region Properties
 
-        private Context Context { get; set; }
         private Activity Activity { get; set; }
         public ICallbackManager CallbackManager { get; set; }
         private FacebookResult FacebookResult { get; set; }
@@ -34,13 +36,14 @@ namespace NorthShoreSurfApp.Droid.Service
 
         #endregion
 
+        /*****************************************************************/
+        // CONSTRUCTOR
+        /*****************************************************************/
         #region Constructor
 
-        public AndroidFacebookService(Context context)
+        public AndroidFacebookService()
         {
-            Context = context;
-            if (context is Activity)
-                Activity = (Activity)context;
+            Activity = MainActivity.Instance;
             // Create callback manager using CallbackManagerFactory
             CallbackManager = CallbackManagerFactory.Create();
             LoginManager.Instance.RegisterCallback(CallbackManager, this);
@@ -48,6 +51,9 @@ namespace NorthShoreSurfApp.Droid.Service
 
         #endregion
 
+        /*****************************************************************/
+        // METHODS
+        /*****************************************************************/
         #region Methods
 
         /// <summary>
@@ -94,6 +100,9 @@ namespace NorthShoreSurfApp.Droid.Service
 
         #endregion
 
+        /*****************************************************************/
+        // INTERFACE METHODS
+        /*****************************************************************/
         #region Interface methods
 
         /// <summary>

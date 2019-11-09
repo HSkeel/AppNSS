@@ -23,10 +23,10 @@ namespace NorthShoreSurfApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            App.Init(new IOSFacebookService());
-
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+
+            Firebase.Core.App.Configure();
 
             return base.FinishedLaunching(app, options);
         }

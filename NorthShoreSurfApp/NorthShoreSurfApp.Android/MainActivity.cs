@@ -11,6 +11,8 @@ using Android.Content;
 using System.Text;
 using System.Security.Cryptography;
 using NorthShoreSurfApp.Droid.Service;
+using NorthShoreSurfApp.Droid.Services;
+using Firebase;
 
 namespace NorthShoreSurfApp.Droid
 {
@@ -18,15 +20,24 @@ namespace NorthShoreSurfApp.Droid
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         private AndroidFacebookService facebookService;
+        private AndroidFirebaseService firebaseService;
+        internal static MainActivity Instance { get; private set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Instance = this;
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
             
             base.OnCreate(savedInstanceState);
-            facebookService = new AndroidFacebookService(this);
-            App.Init(facebookService);
+
+            FirebaseApp.InitializeApp(this);
+
+            facebookService = new AndroidFacebookService();
+            firebaseService = new AndroidFirebaseService();
+
+            App.FacebookService = facebookService;
+            App.FirebaseService = firebaseService;
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

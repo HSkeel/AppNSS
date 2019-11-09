@@ -7,7 +7,7 @@
              IconImageSource="ic_car.png"
              NavigationPage.HasNavigationBar="True"
              xmlns:local="clr-namespace:NorthShoreSurfApp"
-             x:Class="NorthShoreSurfApp.MainPage">
+             x:Class="NorthShoreSurfApp.HomePage">
 
     <Grid>
         
@@ -23,19 +23,10 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-        <!--<Button
-                x:Name="btnFacebookLogin"       
-                HeightRequest="60"
-                CornerRadius="10"
-            Margin="10"
-            BorderColor="Black"
-                BorderWidth="1"
-                Text="Login"
-                BackgroundColor="Yellow"
-                />-->
+
             <Button
                 x:Name="btnFacebookLogout"       
-                Text="Logout"
+                Text="{local:Translate sign_up}"
                 Grid.Row="1"       
                 BackgroundColor="Orange"
                 />

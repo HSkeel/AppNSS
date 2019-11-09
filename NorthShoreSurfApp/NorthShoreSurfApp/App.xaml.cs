@@ -1,5 +1,7 @@
-﻿using NorthShoreSurfApp.Service;
+﻿using Microsoft.EntityFrameworkCore;
+using NorthShoreSurfApp.Database;
 using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,18 +10,23 @@ namespace NorthShoreSurfApp
     public partial class App : Application
     {
         public static IFacebookService FacebookService { get; set; }
+        public static IFirebaseService FirebaseService { get; set; }
+        public static IDataService DataService { get; set; }
+        public static ILocalDataService LocalDataService { get; set; }
+        public static IOrientationService OrientationService { get; set; }
 
         public App()
         {
             InitializeComponent();
-
-            //MainPage = new MainPage();
+            
             MainPage = new RootTabbedPage();
-        }
+            
+            LocalDataService = DependencyService.Get<ILocalDataService>();
+            OrientationService = DependencyService.Get<IOrientationService>();
 
-        public static void Init(IFacebookService facebookService)
-        {
-            FacebookService = facebookService;
+            LocalDataService.InitializeFiles(true);
+
+            DataService = new NSSDatabaseService<NSSDatabaseContext>();
         }
 
         protected override void OnStart()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NorthShoreSurfApp.Service
+namespace NorthShoreSurfApp
 {
     public interface IFacebookService
     {
@@ -10,8 +10,6 @@ namespace NorthShoreSurfApp.Service
         void LogOut();
         void GetUserData(IFacebookDataCallback callback);
         bool LoggedIn { get; }
-        IFacebookLoginCallback FacebookLoginCallback { get; set; }
-        IFacebookDataCallback FacebookDataCallback { get; set; }
     }
 
     public interface IFacebookLoginCallback

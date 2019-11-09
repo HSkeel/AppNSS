@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "341553639039",
+    "firebase_url": "https://northshoresurfapp.firebaseio.com",
+    "project_id": "northshoresurfapp",
+    "storage_bucket": "northshoresurfapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341553639039:android:5434964e2a1c1af1cf594a",
+        "android_client_info": {
+          "package_name": "com.northshoresurf.android.northshoresurfapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341553639039-2ko2o843h0t16jb5ie2ss8fmiie8pinu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.northshoresurf.android.northshoresurfapp",
+            "certificate_hash": "a31aa69e904c166ac31e25ff7ed17804ba5911cf"
+          }
+        },
+        {
+          "client_id": "341553639039-69fuptiu27eeut6dtm4evip5h8d86iol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKg7UzZ4qk3S1P9w06HPwW1GuzvLx07X4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341553639039-69fuptiu27eeut6dtm4evip5h8d86iol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,23 +6,29 @@ using Facebook.CoreKit;
 using Facebook.LoginKit;
 using Foundation;
 using Newtonsoft.Json;
-using NorthShoreSurfApp.Service;
+using NorthShoreSurfApp;
 using UIKit;
 
+[assembly: Xamarin.Forms.Dependency(typeof(IFirebaseService))]
 namespace NorthShoreSurfApp.iOS.Services
 {
     public class IOSFacebookService : IFacebookService
     {
+        /*****************************************************************/
+        // PROPERTIES
+        /*****************************************************************/
         #region Properties
 
         public bool LoggedIn => AccessToken.CurrentAccessToken != null;
-        public UIViewController ViewController { get; set; }
         public FacebookResult FacebookResult { get; set; }
-        public IFacebookLoginCallback FacebookLoginCallback { get; set; }
-        public IFacebookDataCallback FacebookDataCallback { get; set; }
+        private IFacebookLoginCallback FacebookLoginCallback { get; set; }
+        private IFacebookDataCallback FacebookDataCallback { get; set; }
 
         #endregion
 
+        /*****************************************************************/
+        // METHODS
+        /*****************************************************************/
         #region Methods
 
         /// <summary>
@@ -90,6 +96,5 @@ namespace NorthShoreSurfApp.iOS.Services
         }
 
         #endregion
-
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace NorthShoreSurfApp.Services
+namespace NorthShoreSurfApp
 {
     public class MSWComponent
     {
