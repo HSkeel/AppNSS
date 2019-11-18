@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:local="clr-namespace:NorthShoreSurfApp"
+             x:Name="this"
              x:Class="NorthShoreSurfApp.CustomImageTextButton">
   <ContentView.Content>
         <Grid 
@@ -15,31 +16,32 @@
                 <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
+            <!--Background frame-->
             <Frame
                 x:Name="frame"
-                CornerRadius="5"
-                BackgroundColor="#3C5A99"
+                HasShadow="false"
+                CornerRadius="{Binding CornerRadius, Source={x:Reference this}}"
+                BackgroundColor="{Binding Background, Source={x:Reference this}}"
                 Grid.ColumnSpan="2"
                 />
-
+            <!--Icon image-->    
             <Image
                 x:Name="image"
                 BackgroundColor="Transparent"
-                Source="ic_facebook.png"
+                Source="{Binding Icon, Source={x:Reference this}}"
                 Margin="5"
                 />
-
+            <!--Title-->
             <Label
                 x:Name="label"
                 Grid.Column="1"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 FontSize="18"
-                TextColor="White"
-                Text="Fortsæt med Facebook"
+                TextColor="{Binding TitleColor, Source={x:Reference this}}"
+                Text="{Binding Title, Source={x:Reference this}}"
                 />
-
+            <!--Button-->    
             <Button 
                 x:Name="button"
                 Grid.ColumnSpan="2"
@@ -50,6 +52,9 @@
                         <local:CustomButtonImageTextPressedTriggerAction />
                     </EventTrigger>
                     <EventTrigger Event="Released">
+                        <local:CustomButtonImageTextReleasedTriggerAction />
+                    </EventTrigger>
+                    <EventTrigger Event="Unfocused">
                         <local:CustomButtonImageTextReleasedTriggerAction />
                     </EventTrigger>
                 </Button.Triggers>

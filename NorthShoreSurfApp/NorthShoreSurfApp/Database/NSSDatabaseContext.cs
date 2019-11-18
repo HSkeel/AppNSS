@@ -18,7 +18,7 @@ namespace NorthShoreSurfApp
             {
                 case Device.iOS:
                     SQLitePCL.Batteries_V2.Init();
-                    databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "..", "Library", LocalDataFiles.Database); ;
+                    databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..", "Library", "DataFiles", LocalDataFiles.Database);
                     break;
                 case Device.Android:
                     databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), LocalDataFiles.Database);

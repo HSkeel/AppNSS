@@ -20,12 +20,12 @@ namespace NorthShoreSurfApp
                 {
                     var navigationPage = page as CustomNavigationPage;
 
-                    if (navigationPage.IconSelectedResource == null || navigationPage.IconUnselectedResource == null)
+                    if (navigationPage.IconSelectedSource == null || navigationPage.IconUnselectedSource == null)
                         continue;
                     else if (page == CurrentPage)
-                        page.IconImageSource = ((CustomNavigationPage)page).IconSelectedResource;
+                        page.IconImageSource = ((CustomNavigationPage)page).IconSelectedSource;
                     else
-                        page.IconImageSource = ((CustomNavigationPage)page).IconUnselectedResource;
+                        page.IconImageSource = ((CustomNavigationPage)page).IconUnselectedSource;
                 }
             }
         }

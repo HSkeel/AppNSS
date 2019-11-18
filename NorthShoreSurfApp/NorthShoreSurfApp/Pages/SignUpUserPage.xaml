@@ -3,13 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:NorthShoreSurfApp.ViewModels"
              mc:Ignorable="d"
-             x:Class="NorthShoreSurfApp.SignUpUserPage">
+             xmlns:local="clr-namespace:NorthShoreSurfApp"
+             x:Class="NorthShoreSurfApp.SignUpUserPage"
+             BackgroundColor="{StaticResource NSSBlue}">
+
+    <ContentPage.BindingContext>
+        <models:SignUpUserModel />
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <StackLayout Margin="20, 0, 20, 0" HorizontalOptions="Fill" VerticalOptions="Center">
+                <local:CustomTextBox Title="{local:Translate first_name}" TitleColor="White" TitleSize="18" Text="{Binding FirstName, Mode=TwoWay}" TextColor="Black" TextSize="24"/>
+                <local:CustomTextBox Title="{local:Translate last_name}" TitleColor="White" TitleSize="18" Text="{Binding LastName, Mode=TwoWay}" TextColor="Black" TextSize="24"/>
+                <local:CustomTextBox Keyboard="Numeric" Title="{local:Translate age}" TitleColor="White" TitleSize="18" Text="{Binding Age, Mode=TwoWay}" TextColor="Black" TextSize="24"/>
+                <Picker x:Name="Gender" HorizontalOptions="FillAndExpand" ItemsSource="{Binding Genders}"/>
+            </StackLayout>
+            <local:CustomImageTextButton x:Name="btnNext"
+                                         Grid.Row="1" 
+                                         Margin="20, 2, 20, 20" 
+                                         HeightRequest="60" 
+                                         Background="White" 
+                                         CornerRadius="2" 
+                                         BackgroundPressed="#0067B0" 
+                                         Icon="ic_facebook.png"
+                                         TitleColor="Black"
+                                         Title="{local:Translate next}"
+                                         />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

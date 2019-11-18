@@ -7,24 +7,24 @@ namespace NorthShoreSurfApp
 {
     public class CustomNavigationPage : NavigationPage
     {
+        /*****************************************************************/
+        // VARIABLES
+        /*****************************************************************/
+        #region Variables
+
         public static readonly BindableProperty IconSelectedProperty = BindableProperty.Create("IconSelectedResource", typeof(string), typeof(CustomNavigationPage), null);
         public static readonly BindableProperty IconUnselectedProperty = BindableProperty.Create("IconUnselectedResource", typeof(string), typeof(CustomNavigationPage), null);
 
-        public string IconSelectedResource
-        {
-            get { return (string)GetValue(IconSelectedProperty); }
-            set { SetValue(IconSelectedProperty, value); }
-        }
+        #endregion
 
-        public string IconUnselectedResource
-        {
-            get { return (string)GetValue(IconUnselectedProperty); }
-            set { SetValue(IconUnselectedProperty, value); }
-        }
+        /*****************************************************************/
+        // CONSTRUCTOR
+        /*****************************************************************/
+        #region Constructor
 
         private void Init()
         {
-            BarBackgroundColor = Color.FromHex("F0F0F0");
+            BarBackgroundColor = (Color)App.Current.Resources["BarBackground"];
             BarTextColor = Color.Black;
         }
 
@@ -38,5 +38,25 @@ namespace NorthShoreSurfApp
             Init();
         }
 
+        #endregion
+
+        /*****************************************************************/
+        // PROPERTIES
+        /*****************************************************************/
+        #region Properties
+
+        public string IconSelectedSource
+        {
+            get { return (string)GetValue(IconSelectedProperty); }
+            set { SetValue(IconSelectedProperty, value); }
+        }
+
+        public string IconUnselectedSource
+        {
+            get { return (string)GetValue(IconUnselectedProperty); }
+            set { SetValue(IconUnselectedProperty, value); }
+        }
+
+        #endregion
     }
 }

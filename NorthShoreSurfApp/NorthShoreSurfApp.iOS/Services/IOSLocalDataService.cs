@@ -60,11 +60,13 @@ namespace NorthShoreSurfApp.iOS.Services
                 string path = Path.Combine(DataFilesFolderPath, fileName);
 
                 // This is where we copy in the pre-created database
-                if (!File.Exists(path))
+                if (force || !File.Exists(path))
                 {
                     var nameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
-                    var extension = Path.GetExtension(fileName);
+                    var extension = Path.GetExtension(fileName).Replace(".", "");
                     var resource = NSBundle.MainBundle.PathForResource(nameWithoutExtension, extension);
+                    if (force)
+                        File.Delete(path);
                     File.Copy(resource, path);
                 }
             }

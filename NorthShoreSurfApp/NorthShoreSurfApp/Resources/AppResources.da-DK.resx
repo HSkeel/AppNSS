@@ -117,70 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="age" xml:space="preserve">
-    <value>Age</value>
-  </data>
-  <data name="back" xml:space="preserve">
-    <value>Back</value>
-  </data>
-  <data name="cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="could_not_add_events_to_carpool_event" xml:space="preserve">
-    <value>Could not add events to carpool event</value>
-  </data>
-  <data name="could_not_add_events_to_carpool_request" xml:space="preserve">
-    <value>Could not add events to carpool request</value>
-  </data>
-  <data name="could_not_answer_confirmation" xml:space="preserve">
-    <value>Could not answer confirmation</value>
-  </data>
-  <data name="could_not_create_carpool_event" xml:space="preserve">
-    <value>Could not create carpool event</value>
-  </data>
-  <data name="could_not_create_carpool_request" xml:space="preserve">
-    <value>Could not create carpool request</value>
-  </data>
-  <data name="could_not_delete_invite" xml:space="preserve">
-    <value>Could not delete invite</value>
-  </data>
-  <data name="could_not_invite_passenger" xml:space="preserve">
-    <value>Could not invite passenger</value>
-  </data>
-  <data name="could_not_sign_up_to_carpool" xml:space="preserve">
-    <value>Could not sign up to carpool event</value>
-  </data>
-  <data name="could_not_unsign_from_carpool" xml:space="preserve">
-    <value>Could not unsign from carpool event</value>
-  </data>
-  <data name="female" xml:space="preserve">
-    <value>Female</value>
-  </data>
-  <data name="first_name" xml:space="preserve">
-    <value>First name</value>
-  </data>
-  <data name="gender" xml:space="preserve">
-    <value>Gender</value>
-  </data>
-  <data name="last_name" xml:space="preserve">
-    <value>Last name</value>
-  </data>
-  <data name="male" xml:space="preserve">
-    <value>Male</value>
-  </data>
   <data name="next" xml:space="preserve">
-    <value>Next</value>
-  </data>
-  <data name="other" xml:space="preserve">
-    <value>Other</value>
-  </data>
-  <data name="sign_up" xml:space="preserve">
-    <value>Sign up</value>
-  </data>
-  <data name="user_already_exist" xml:space="preserve">
-    <value>User already exist</value>
-  </data>
-  <data name="user_not_found" xml:space="preserve">
-    <value>User not found</value>
+    <value>Næste</value>
   </data>
 </root>

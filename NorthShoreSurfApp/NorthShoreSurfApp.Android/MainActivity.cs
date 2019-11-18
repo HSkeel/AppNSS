@@ -39,6 +39,8 @@ namespace NorthShoreSurfApp.Droid
             App.FacebookService = facebookService;
             App.FirebaseService = firebaseService;
 
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
@@ -54,6 +56,18 @@ namespace NorthShoreSurfApp.Droid
         {
             base.OnActivityResult(requestCode, resultCode, data);
             facebookService.CallbackManager.OnActivityResult(requestCode, Convert.ToInt32(resultCode), data);
+        }
+
+        public override void OnBackPressed()
+        {
+            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
+            {
+                // Pages are in the popup stack
+            }
+            else
+            {
+                base.OnBackPressed();
+            }
         }
 
     }

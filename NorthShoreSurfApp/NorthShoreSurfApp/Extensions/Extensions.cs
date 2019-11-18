@@ -25,6 +25,20 @@ namespace NorthShoreSurfApp
 
     public static class Extensions
     {
+        public static T FindParentWithType<T>(this View view)
+        {
+            if (view == null)
+                return default(T);
 
+            Element parent = view.Parent;
+            while (parent != null)
+            {
+                if (parent.GetType() == typeof(T))
+                    return (T)Convert.ChangeType(parent, typeof(T));
+                parent = parent.Parent;
+            }
+
+            return default(T);
+        }
     }
 }
